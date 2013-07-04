@@ -1,0 +1,118 @@
+
+.web_header{
+    overflow: hidden;
+    position: fixed;
+    background-color: #000000;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 45px;
+}
+
+.web_content{
+    background-color: #000000;
+    height: 45px;
+}
+
+/*.outer:hover{
+    position: fixed;
+    overflow: auto;
+    overflow-x: hidden;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    border: red solid 1px ;
+    *//* background-color: rgba(120,120,120,.50);*//*
+    margin-top: 45px;
+}*/
+
+.header{
+    height: 60px;
+}
+
+.inner-header{
+    width: 830px;
+    height: 45px;
+}
+
+.div_webTitle{
+    height: 45px;
+}
+
+.WebTitle{
+    float: left;
+    padding-top: 10px;
+    padding-left: 2px;
+}
+
+.WebTitle a{
+    color: white;
+    font-size: 15px;
+    text-shadow: 0px 0px 25px white;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    cursor: pointer;
+}
+
+.WebTitle a:hover{
+    color: white;
+    font-size: 15px;
+    text-shadow: 0px 0px 25px white;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    cursor: pointer;
+}
+
+.div-greet{
+    float: right;
+    width: auto;
+    padding-right: 3px;
+    padding-top: 10px;
+}
+
+.div-greet span.welNote{
+    color: white;
+    font-size: 10px;
+    font-weight: normal;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+}
+
+.div-greet span.user_name{
+    color: yellow;
+    font-size: 10px;
+    font-weight: normal;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    text-decoration: none;
+}
+
+.div-greet .span_out{
+    padding-left: 5px;
+}
+
+.div-greet .span_out span.liner{
+    color: silver;
+    font-size: 12px;
+}
+
+.div-greet .span_out a{
+    cursor: pointer;
+    color: silver;
+    font-size: 10px;
+    font-weight: normal;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    text-decoration: none;
+}
+
+.div-greet .span_out a:hover{
+    cursor: pointer;
+    color: silver;
+    font-size: 10px;
+    font-weight: normal;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    text-decoration: underline;
+}

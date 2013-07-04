@@ -1,0 +1,941 @@
+body{
+    background-image: url("../images/body.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    margin: 0px;
+    padding: 0px;
+    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.outer{
+    position: static;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    height: inherit;
+    width: 100%;
+    margin-top: 43px;
+}
+
+.body{
+    border: solid 1px silver;
+    border-bottom: none;
+    width: 830px;
+    height: auto;
+}
+
+.inner-body{
+    height: inherit;
+    width: auto;
+}
+
+.wrapper-menus{
+    position: fixed;
+    width: 830px;
+    z-index: 1000;
+    height: 22px;
+    background-color: silver;
+}
+
+.topmenus{
+    margin: 0px;
+    padding: 0px;
+    height: auto;
+}
+
+.topmenus ul{
+    list-style: none;
+    position: relative;
+    display: block;
+    padding: 0px;
+    margin: 0px;
+}
+
+.topmenus li{
+    padding-right: 1px;
+    float: right;
+}
+
+.topmenus li.li_search{
+    float: left;
+}
+
+.topmenus li.li_search div{
+    padding-left: 200px;
+    border-right: none;
+}
+
+.topmenus li.li_search div input{
+    height: auto;
+    width: 230px;
+    border: solid 1px silver;
+    color: silver;
+    font-size: 10px;
+    font-weight: normal;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    text-decoration: none;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.topmenus li.li_search div input:focus{
+    height: 12px;
+    width: 230px;
+    border: solid 1px silver;
+    color: #000000;
+    font-size: 10px;
+    font-weight: normal;
+    box-shadow: 0px 0px 3px blue;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    text-decoration: none;
+}
+
+.topmenus li div{
+    border-right: solid 1px darkgray;
+    padding-right: 1px;
+}
+
+.topmenus li div.div_find_friend{
+   border: none;
+}
+
+.topmenus ul li a#link_prof{
+
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 4px;
+    padding-right: 4px;
+    font-size: 10px;
+    text-decoration: none;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    color: black;
+    cursor: pointer;
+}
+
+.topmenus ul li a#link_find_friend{
+
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 4px;
+    padding-right: 4px;
+    font-size: 10px;
+    text-decoration: none;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    color: black;
+    cursor: pointer;
+}
+
+.topmenus ul li a#link_prof:hover{
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 4px;
+    padding-right: 4px;
+    font-size: 10px;
+    text-decoration: none;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    color: black;
+    cursor: pointer;
+    background-color: rgba(220,220,220,.5);
+}
+
+.topmenus ul li a#link_find_friend:hover{
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 4px;
+    padding-right: 4px;
+    font-size: 10px;
+    text-decoration: none;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    color: black;
+    cursor: pointer;
+    background-color: rgba(220,220,220,.5);
+}
+
+.topmenus ul li a#link_home_prof{
+
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 4px;
+    padding-right: 4px;
+    font-size: 10px;
+    text-decoration: none;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    color: black;
+    cursor: pointer;
+}
+
+
+.topmenus ul li a#link_home_prof:hover{
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 4px;
+    padding-right: 4px;
+    font-size: 10px;
+    text-decoration: none;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    color: black;
+    cursor: pointer;
+    background-color: rgba(220,220,220,.5);
+}
+
+
+
+.topmenus ul li a#link_home:link{
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 4px;
+    padding-right: 4px;
+    font-size: 10px;
+    text-decoration: none;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    color: black;
+    cursor: pointer;
+    background-color: rgba(220,220,220,.5);
+}
+
+.topmenus ul li a#link_prof_user:link{
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 4px;
+    padding-right: 4px;
+    font-size: 10px;
+    text-decoration: none;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    color: black;
+    cursor: pointer;
+    background-color: rgba(220,220,220,.5);
+}
+
+.div_leftSide{
+    position: fixed;
+    z-index: 1000;
+    background-color: rgba(200,200,200,.1);
+    float: left;
+   /* height: 932px;*/
+    height: auto;
+    width: 250px;
+}
+
+.user_info{
+    height: auto;
+}
+
+#tbl_user_info{
+    margin-top: 40px;
+    border-bottom: solid 1px darkgray;
+    width: 210px;
+}
+/*
+#tbl_user_info tr td{
+    color: greenyellow;
+    font-size: 12px;
+    text-decoration: none;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    cursor: pointer;
+}*/
+
+#tbl_user_info tr.tr_name td{
+    padding-top: 15px;
+}
+
+#tbl_user_info tr.tr_name{
+    margin-top: 0px;
+}
+
+.liner{
+    color: silver;
+    font-size: 12px;
+}
+
+#td_link_edit{
+    padding-top: 6px;
+}
+
+#tbl_user_info tr td a#a_link_edit{
+    color: silver;
+    font-size: 12px;
+    text-decoration: none;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    cursor: pointer;
+}
+
+#tbl_user_info tr td a#a_link_edit:hover{
+    color: silver;
+    font-size: 12px;
+    text-decoration: underline;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    cursor: pointer;
+}
+
+#tbl_user_info tr td img{
+    cursor: pointer;
+}
+
+
+/*tbody*/
+
+#tbl_user_info tbody tr td a{
+    color: yellowgreen;
+    font-weight: normal;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    font-size: 14px;
+    cursor: default;
+    text-align: center;
+}
+
+#tbl_user_info tbody tr td a#username{
+    color: rgba(200,200,200,.50);
+    font-size: 11px;
+    font-weight: normal;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    cursor: default;
+    text-align: center;
+}
+
+#tbl_user_info tbody tr td a#username:hover{
+    text-decoration: none;
+}
+
+#tbl_user_info tbody tr td a:hover{
+    color: greenyellow;
+    font-size: 14px;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    cursor: pointer;
+}
+
+#tbl_user_info tr td a#edit_proLink{
+    color: silver;
+    font-size: 10px;
+    text-decoration: none;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    cursor: pointer;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+#tbl_user_info tr td .span_out span.liner{
+    color: silver;
+    font-size: 12px;
+}
+
+#tbl_user_info tr td a#edit_proLink{
+    cursor: pointer;
+    color: silver;
+    font-size: 10px;
+    font-weight: normal;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    text-decoration: none;
+}
+
+#tbl_user_info tr td a#edit_proLink:hover{
+    cursor: pointer;
+    color: silver;
+    font-size: 10px;
+    font-weight: normal;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    text-decoration: underline;
+}
+
+#tbl_actions{
+    padding-top: 5px;
+    border-collapse: collapse;
+    border: none;
+    width: 210px;
+}
+
+#tbl_footer{ padding-right: 2px;
+    padding-left: 3px;
+    padding-top: 5px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    border-collapse: collapse;
+    border: none;
+    width: 210px;
+}
+
+.founder{
+    color: rgba(0,180,220,50);
+}
+
+.founder:hover{
+    text-decoration: underline;
+    color: rgba(0,180,220,50);
+}
+
+#tbl_footer tr td{
+    text-align: justify;
+    padding-right: 2px;
+    padding-left: 3px;
+}
+
+#tbl_actions tr td{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+}
+
+a.span_txt{
+    color: rgb(200,200,200);
+    font-weight: normal;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    font-size: 12px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+
+a.span_txt:hover{
+    color: rgb(200,200,200);
+    font-weight: normal;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    font-size: 12px;
+    text-decoration: underline;
+    text-align: center;
+}
+
+span.span_txt{
+    color: rgb(200,200,200);
+    font-weight: normal;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    font-size: 12px;
+    text-decoration: none;
+    text-align: center;
+}
+
+#tbl_info{
+    /*background-color: gray;*/
+    border-collapse: collapse;
+    border-bottom: solid 1px darkgray;
+    width: 210px;
+}
+
+#tbl_info tr td{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+}
+
+#tbl_info tr:hover{
+    background-color: rgba(200,200,200,.10);
+}
+
+.span_count_on{
+    color: yellow;
+    font-size: 11px;
+}
+
+.fg_num{
+    color: yellow;
+    font-size: 11px;
+}
+
+.ontweeter_count_on{
+    color: yellow;
+    font-size: 11px;
+}
+
+
+.fr_num{
+    color: yellow;
+    font-size: 11px;
+}
+
+/*Div right Side*/
+
+.div_rightSide{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    background-color: rgba(200,200,200,.1);
+    float: right;
+   /* height: 923px;*/
+    height: auto;
+    width: 578px;
+}
+
+.div_align_center{
+    position: static;
+    /*height: 922px;*/ /* height may be optional */
+    margin-top: 17px;
+    height: auto;
+    width: 560px;
+}
+
+.div_user_actions{
+    border: solid 1px darkblue;
+    height: 865px; /* height may be optional */
+    width: 560px;
+}
+
+.user_action{
+  /*  padding-bottom: 20px;*/
+    background-color: #000000;
+    border-bottom: solid 1px rgba(110,110,110,.50);
+    border-top: solid 1px rgba(110,110,110,.50);
+    color: rgba(0,180,220,.75);
+    position: absolute;
+    width: 560px;
+    height: 25px;
+}
+
+.user_action tr td{
+    cursor: pointer;
+    padding-left: 2px;
+    padding-right: 2px;
+    /* hahahahaha try luh */
+}
+
+.user_action tr td input{
+    height: auto;
+    width: 200px;
+    border: solid 1px silver;
+    color: silver;
+    font-size: 10px;
+    font-weight: normal;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    text-decoration: none;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+#com_id{
+    color: rgba(0,180,220,50);
+    font-size: 10px;
+    font-weight: normal;
+    text-decoration: none;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+}
+
+#com_id:hover{
+    color: rgba(0,180,220,50);
+    cursor: default;
+    font-size: 10px;
+    font-weight: normal;
+    cursor: pointer;
+    text-decoration: underline;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+}
+
+.user_action a.updating_stat {
+    color: rgba(0,180,220,50);
+    font-size: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+
+}
+
+.user_action a.updating_stat:hover {
+    color: rgba(0,180,220,50);
+    cursor: default;
+    font-size: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+
+}
+
+.user_action .a_link_friends{
+    color: rgba(0,180,220,50);
+    font-size: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+
+}
+
+.user_action .a_link_friends:hover{
+    color: rgba(0,180,220,50);
+    cursor: pointer;
+    font-size: 10px;
+    font-weight: bold;
+    text-decoration: underline;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+
+}
+
+.div_user_txt{
+    position: relative;
+    display: block;
+}
+
+#tblUserContents{
+    padding-bottom: 1px;
+    border-collapse: collapse;
+    width: 99%;
+}
+
+#tblUserContents tbody tr td{
+    padding-bottom: 10px;
+}
+
+.txt_footer_view{
+    background-color: rgba(0,0,0,.30);
+    width: 99%;
+    padding-top: 5px;
+    padding-right: 6px;
+}
+
+.txt_footer{
+    padding-top: 5px;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    padding-right: 6px;
+    background-color: rgba(0,0,0,.30);
+    width: 99%;
+}
+
+.div_view_tweet{
+    width: 491px;
+    /*border-top: solid 1px gray;*/
+}
+
+.div_view_comments{
+
+}
+
+.div_view_tweet_actions{
+    width: 460px;
+    /* border-bottom: solid 1px red;*/
+}
+
+#view_post{
+     margin-left: 5px;
+     min-height: auto; /*min height of DIV should be set to at least 2x the width of the arrow*/
+     background: rgba(10,10,10,.05);
+     color: #ffffff;
+     border-top: solid 1px rgba(10,10,10,.25);
+     border-left: solid 1px rgba(10,10,10,.25);
+     border-right: solid 1px rgba(10,10,10,.25);
+     border-bottom: solid 1px rgba(10,10,10,.25);
+
+     padding-top: 5px;
+     padding-left: 5px;
+     position:relative;
+     word-wrap:break-word;
+     -moz-border-radius:5px; /*add some nice CSS3 round corners*/
+     -webkit-border-radius:5px;
+     border-radius:1px;
+ }
+
+.postka{
+    background-color: rgba(20,20,20,.15);
+    margin-left: 5px;
+    height: 17px; /*min height of DIV should be set to at least 2x the width of the arrow*/
+    color: rgb(200,200,200);
+    overflow: hidden;
+    overflow-x: hidden;
+    border-color: gray;
+    resize: none;
+    position:relative;
+    width: 335px;
+    word-wrap:break-word;
+    -moz-border-radius:2px; /*add some nice CSS3 round corners*/
+    -webkit-border-radius:2px;
+    border-radius:2px;
+
+    font-size: 13px;
+    font-weight: normal;
+    text-decoration: none;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+}
+
+.postka:focus{
+    margin-left: 5px;
+    height: 17px; /*min height of DIV should be set to at least 2x the width of the arrow*/
+    background-color: rgba(20,20,20,.15);
+    border-color: gray;
+    color: white;
+    /*padding-top: 5px;
+    padding-left: 5px;*/
+    position:relative;
+    word-wrap:break-word;
+    -moz-border-radius:2px; /*add some nice CSS3 round corners*/
+    -webkit-border-radius:2px;
+    border-radius:2px;
+
+    font-size: 13px;
+    font-weight: normal;
+    text-decoration: none;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+}
+
+#my_post{
+    background-color: rgba(20,20,20,.15);
+    margin-left: 5px;
+    height: 17px; /*min height of DIV should be set to at least 2x the width of the arrow*/
+    color: rgb(200,200,200);
+    overflow: auto;
+    overflow-x: hidden;
+    border-color: gray;
+    resize: none;
+    position:relative;
+    width: 335px;
+    word-wrap:break-word;
+    -moz-border-radius:2px; /*add some nice CSS3 round corners*/
+    -webkit-border-radius:2px;
+    border-radius:2px;
+
+    font-size: 13px;
+    font-weight: normal;
+    text-decoration: none;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+}
+
+#my_post:focus{
+    margin-left: 5px;
+    height: 17px; /*min height of DIV should be set to at least 2x the width of the arrow*/
+    background-color: rgba(20,20,20,.15);
+    border-color: gray;
+    color: white;
+    /*padding-top: 5px;
+    padding-left: 5px;*/
+    position:relative;
+    word-wrap:break-word;
+    -moz-border-radius:2px; /*add some nice CSS3 round corners*/
+    -webkit-border-radius:2px;
+    border-radius:2px;
+
+    font-size: 13px;
+    font-weight: normal;
+    text-decoration: none;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+}
+
+.div_view_tweet a span{
+    color: yellowgreen;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: bold;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+}
+
+.div_view_tweet a{
+    color: #ffffff;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 3px;
+    font-size: 14px;
+    text-decoration: none;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+}
+
+#txt_content{
+    overflow: hidden;
+    background-color: rgba(200,200,200,.30);
+    border: none;
+    color: white;
+    font-size: 11px;
+    text-decoration: none;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    width: 98%;
+    resize: none;
+    border-radius: 2px;
+    padding: 5px;
+}
+
+#txt_content:focus{
+    overflow: hidden;
+    background-color: rgba(200,200,200,.30);
+    color: white;
+    font-size: 11px;
+    text-decoration: none;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    width: 98%;
+    resize: none;
+    box-shadow: 0px 0px 1px yellow;
+    border-radius: 2px;
+    padding: 5px;
+}
+
+#txt_comment{
+    overflow: hidden;
+    background-color: rgba(200,200,200,.30);
+    color: #000000;
+    font-size: 11px;
+    text-decoration: none;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    width: 96.5%;
+    height: 15px;
+    border: none;
+    resize: none;
+    border-radius: 2px;
+    padding: 5px;
+}
+
+#view_txt_content{
+    color: #000000;
+   /* border: solid 1px red;*/
+    font-size: 11px;
+    text-decoration: none;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    width: 90%;
+    height: 82px;
+    resize: none;
+    border-radius: 3px;
+    padding-left: 45px;
+    padding-top:3px;
+    padding-bottom: 5px;
+    background: none;
+}
+
+.div_user_view_tweets{
+    overflow: hidden;
+    text-align: center;
+    width: 95%;
+    /*height: 665px;*/
+    height:auto;
+    min-height:40px; /*min height of DIV should be set to at least 2x the width of the arrow*/
+    color:white;
+    padding:5px;
+    position:relative;
+    word-wrap:break-word;
+    -moz-border-radius:5px; /*add some nice CSS3 round corners*/
+    -webkit-border-radius:5px;
+    border-radius:5px;
+}
+
+.divUserContents_wrapper{
+    position: static;
+    width: 560px;
+}
+
+.divUserContents{
+    text-align: center;
+    width: 95%;
+    min-height: auto; /*min height of DIV should be set to at least 2x the width of the arrow*/
+    background: rgba(10,10,10,.50);
+    color:white;
+    padding-top: 8px;
+    padding-left: 5px;
+    position:relative;
+    word-wrap:break-word;
+    -moz-border-radius:5px; /*add some nice CSS3 round corners*/
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    margin-bottom:10px;
+}
+
+.divUserContents:after{ /*arrow added to uparrowdiv DIV*/
+    content:'';
+    display:block;
+    position: absolute;
+    top:-20px; /*should be set to -border-width x 2 */
+    left:10px;
+    width:0;
+    height:0;
+    border: solid 1px green;
+    border-color: transparent transparent rgba(10,10,10,.50) transparent; /*border color should be same as div div background color*/
+    border-style: solid;
+    border-width: 10px;
+
+}
+
+.div_user_updates{
+    background-color: white;
+}
+
+.tbody_view_tweets tr{
+    padding-bottom: 5px;
+/*    border-bottom: solid 1px black;*/
+}
+
+#tbl_view_tweets thead tr td a{
+    color: #000000;
+    font-size: 11px;
+    text-decoration: none;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+}
+
+#tbl_view_tweets thead tr td a:hover{
+    text-decoration: underline;
+    cursor: pointer;
+    color: #000000;
+    font-size: 11px;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+}
+
+.tr_upper{
+
+}
+
+#tbl_view_tweets{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.tr_user_post_com{
+    border-bottom: solid 1px black;
+}
+
+.tr_user_post_com td{
+
+    padding-bottom: 5px;
+}
+
+/* Footer */
+
+.footer{
+    position: fixed;
+    border-right: solid 1px #222222;
+    border-left: solid 1px #222222;
+    position: static;
+    background-color: #222222;
+    z-index: 5000;
+    height: auto; /* optional*/
+}
+
+.inner-footer{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 830px;
+}
+
+.inner-footer span.copy_name{
+    color: #ffffff;
+    font-size: 10px;
+    text-decoration: none;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+}
+
+.copy{
+    color: limegreen;
+    font-size: 12px;
+}
+
+.inner-footer a{
+    color: dodgerblue;
+    font-size: 10px;
+    text-decoration: none;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    cursor: pointer;
+}
+
+.inner-footer a:hover{
+    color: dodgerblue;
+    font-size: 10px;
+    text-decoration: underline;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    cursor: pointer;
+}
+
+
+.edit_overlay_prof{
+    position: fixed;
+    background-color: rgba(200,200,200,.70);
+    height: 100%;
+    width: 100%;
+    z-index: 9000000;
+
+}
+
+.eop_contents{
+    width: 830px;
+    height: auto;
+    border: solid 1px red;
+}

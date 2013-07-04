@@ -1,0 +1,417 @@
+body{
+    background-image: url("../images/body.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    margin: 0px;
+    padding: 0px;
+    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.outer{
+    position: static;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    height: inherit;
+    width: 100%;
+    margin-top: 43px;
+}
+
+.outer{
+    position: static;
+    overflow: auto;
+    overflow-x: visible;
+    height: inherit;
+    width: 100%;
+    margin-top: 43px;
+}
+
+.body{
+    border: solid 1px silver;
+    border-bottom: none;
+    width: 830px;
+    height: auto;
+}
+
+.inner-body{
+    height: inherit;
+    width: auto;
+}
+
+.wrapper-menus{
+    position: fixed;
+    width: 830px;
+    z-index: 1000;
+    height: 22px;
+    background-color: silver;
+}
+
+.topmenus{
+    margin: 0px;
+    padding: 0px;
+    height: auto;
+}
+
+.topmenus ul{
+    list-style: none;
+    position: relative;
+    display: block;
+    padding: 0px;
+    margin: 0px;
+}
+
+.topmenus li{
+    padding-right: 1px;
+    float: right;
+}
+
+.topmenus li.li_search{
+    float: left;
+}
+
+.topmenus li.li_search div{
+    padding-left: 200px;
+    border-right: none;
+}
+
+.topmenus li.li_search div input{
+    height: auto;
+    width: 230px;
+    border: solid 1px silver;
+    color: silver;
+    font-size: 10px;
+    font-weight: normal;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    text-decoration: none;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.topmenus li.li_search div input:focus{
+    height: 12px;
+    width: 230px;
+    border: solid 1px silver;
+    color: #000000;
+    font-size: 10px;
+    font-weight: normal;
+    box-shadow: 0px 0px 3px blue;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    text-decoration: none;
+}
+
+.topmenus li div{
+    border-right: solid 1px darkgray;
+    padding-right: 1px;
+}
+
+.topmenus li div.div_find_friend{
+    border: none;
+}
+
+.topmenus ul li a#link_find_friend{
+
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 4px;
+    padding-right: 4px;
+    font-size: 10px;
+    text-decoration: none;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    color: black;
+    cursor: pointer;
+}
+
+.topmenus ul li a#link_find_friend:hover{
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 4px;
+    padding-right: 4px;
+    font-size: 10px;
+    text-decoration: none;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    color: black;
+    cursor: pointer;
+    background-color: rgba(220,220,220,.5);
+}
+
+.topmenus ul li a#link_home{
+
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 4px;
+    padding-right: 4px;
+    font-size: 10px;
+    text-decoration: none;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    color: black;
+    cursor: pointer;
+}
+
+
+.topmenus ul li a#link_home:hover{
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 4px;
+    padding-right: 4px;
+    font-size: 10px;
+    text-decoration: none;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    color: black;
+    cursor: pointer;
+    background-color: rgba(220,220,220,.5);
+}
+
+
+
+.topmenus ul li a#link_prof:link{
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 4px;
+    padding-right: 4px;
+    font-size: 10px;
+    text-decoration: none;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    color: #0081c2;
+    cursor: pointer;
+    background-color: rgba(220,220,220,.5);
+}
+
+.div_leftSide{
+    position: fixed;
+    z-index: 1000;
+    background-color: rgba(200,200,200,.1);
+    float: left;
+    /* height: 932px;*/
+    height: auto;
+    width: 250px;
+}
+
+.user_info{
+    height: auto;
+}
+
+#tbl_user_info{
+    margin-top: 40px;
+    margin-bottom: 17px;
+    width: 100%;
+}
+
+#tbl_user_info tr td{
+    color: greenyellow;
+    font-size: 12px;
+    text-decoration: none;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    cursor: pointer;
+}
+
+#tbl_user_info tr.tr_name td{
+    padding-top: 15px;
+}
+
+#tbl_user_info tr.tr_name{
+    margin-top: 0px;
+}
+
+.liner{
+    color: silver;
+    font-size: 12px;
+}
+
+#td_link_edit{
+    padding-top: 6px;
+}
+
+#tbl_user_info tr td a#a_link_edit{
+    color: silver;
+    font-size: 12px;
+    text-decoration: none;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    cursor: pointer;
+}
+
+#tbl_user_info tr td a#a_link_edit:hover{
+    color: silver;
+    font-size: 12px;
+    text-decoration: underline;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    cursor: pointer;
+}
+
+#tbl_user_info tr td img{
+    cursor: pointer;
+}
+
+
+/*tbody*/
+
+#tbl_user_info tbody tr td a{
+    color: yellowgreen;
+    font-weight: normal;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    font-size: 14px;
+    cursor: default;
+    text-align: center;
+}
+
+#tbl_user_info tbody tr td a#username{
+    color: rgba(200,200,200,.50);
+    font-size: 11px;
+    font-weight: normal;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    cursor: default;
+    text-align: center;
+}
+
+#tbl_user_info tbody tr td a#username:hover{
+    text-decoration: none;
+}
+
+#tbl_user_info tbody tr td a:hover{
+    color: greenyellow;
+    font-size: 14px;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    cursor: pointer;
+}
+
+#tbl_user_info tr td a#edit_proLink{
+    color: silver;
+    font-size: 10px;
+    text-decoration: none;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    cursor: pointer;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+#tbl_user_info tr td .span_out span.liner{
+    color: silver;
+    font-size: 12px;
+}
+
+#tbl_user_info tr td a#edit_proLink{
+    cursor: pointer;
+    color: silver;
+    font-size: 10px;
+    font-weight: normal;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    text-decoration: none;
+}
+
+#tbl_user_info tr td a#edit_proLink:hover{
+    cursor: pointer;
+    color: silver;
+    font-size: 10px;
+    font-weight: normal;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    text-decoration: underline;
+}
+
+#tbl_actions{
+    padding-top: 5px;
+    border-collapse: collapse;
+    border: none;
+    width: 210px;
+}
+
+#tbl_footer{ padding-right: 2px;
+    padding-left: 3px;
+    padding-top: 5px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    border-collapse: collapse;
+    border: none;
+    width: 210px;
+}
+
+.founder{
+    color: rgba(0,180,220,50);
+}
+
+.founder:hover{
+    text-decoration: underline;
+    color: rgba(0,180,220,50);
+}
+
+#tbl_footer tr td{
+    text-align: justify;
+    padding-right: 2px;
+    padding-left: 3px;
+}
+
+#tbl_actions tr td{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+}
+
+a.span_txt{
+    color: rgb(200,200,200);
+    font-weight: normal;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    font-size: 12px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+
+a.span_txt:hover{
+    color: rgb(200,200,200);
+    font-weight: normal;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    font-size: 12px;
+    text-decoration: underline;
+    text-align: center;
+}
+
+span.span_txt{
+    color: rgb(200,200,200);
+    font-weight: normal;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    font-size: 12px;
+    text-decoration: none;
+    text-align: center;
+}
+
+#tbl_info{
+    /*background-color: gray;*/
+    border-collapse: collapse;
+    width: 100%;
+    border-top: solid 1px darkgray;
+    border-bottom: solid 1px darkgray;
+}
+
+#tbl_info tr td{
+    color: rgb(200,200,200);
+    font-weight: normal;
+    font-family: Nimbus Sans L, helvetica, segoe, serif;
+    font-size: 12px;
+    text-decoration: none;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 12px;
+}
+
+#tbl_info tr td:hover{
+    cursor: pointer;
+    background-color: rgba(200,200,200,.10);
+}
+
+.span_count_on{
+    color: yellow;
+    font-size: 11px;
+}
+
+.fg_num{
+    color: yellow;
+    font-size: 11px;
+}
+
+.fr_num{
+    color: yellow;
+    font-size: 11px;
+}
