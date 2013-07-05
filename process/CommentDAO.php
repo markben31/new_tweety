@@ -148,6 +148,21 @@
 
         }
 
+        //add comments
+        function addNewComments($m_id, $content, $emailadd){
+
+            $this->open();
+
+            $stmt = $this->dbcon->prepare("INSERT INTO comments VALUES(null,?,?,?,1);");
+            $stmt->bindParam(1, $m_id);
+            $stmt->bindParam(2, $content);
+            $stmt->bindParam(3, $emailadd);
+            $stmt->execute();
+
+            $this->close();
+
+        }
+
         /*$this->open();
 
            $stmt = $this->dbcon->prepare("SELECT p.images, a.firstName, a.lastName, op.post_contents

@@ -40,7 +40,7 @@
     <link href="../css/bootstrap.css" rel="stylesheet">
     <script type="text/javascript" src="../js/jquery.shorten.1.0.js"></script>
 
-    <title><?php echo $fname . ' ' . $lname; ?></title>
+    <title><?php echo ucwords(strtolower($fname)) . ' ' . ucwords(strtolower($lname)); ?></title>
 </head>
 <body>
 
@@ -58,7 +58,7 @@
                                 <a id="link_find_friend" href="account_setting.php"><img src="../images/settings.png" style="height: 14px;"/> Account Setting</a>
                             </div>
                         </li>
-                        <li><div><a id="link_prof" href=""><img class='' src='../php_func/<?php echo $profile_pic; ?>' style='width:15px; height:13px;' /> <?php echo $fname; ?></a></div></li>
+                        <li><div><a id="link_prof" href=""><img class='' src='../php_func/<?php echo $profile_pic; ?>' style='width:15px; height:13px;' /> <?php echo ucwords(strtolower($fname)); ?></a></div></li>
                         <li><div><a id="link_home" href="../pages/home.php"><i class="icon-home icon-white" ></i> Home</a></div></li>
                     </ul>
                 </div>
@@ -73,8 +73,8 @@
                                <img class="img-polaroid" src="../php_func/<?php echo $profile_pic; ?>" style="width: 50px; height: 50px;"/>
                             </td>
                             <td align="left" >
-                                <a href="" disabled="disabled" name="user_name" id="user_name" style="margin-left: 10px;" /><?php echo $fname . ' ' . $lname;?></a><br/>
-                                <a name="username" id="username" style="margin-left: 10px;"><span style='color: rgba(200,200,200,.50); font-size: 12px;'>@</span><?php echo $username; ?></a>
+                                <a href="" disabled="disabled" name="user_name" id="user_name" style="margin-left: 10px;" /><?php echo ucwords(strtolower($fname)) . ' ' . ucwords(strtolower($lname));?></a><br/>
+                                <a name="username" id="username" style="margin-left: 10px;"><span style='color: rgba(200,200,200,.50); font-size: 12px;'>@</span><?php echo strtolower($username); ?></a>
                             </td>
                         </tr>
                         </tbody>

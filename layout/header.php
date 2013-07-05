@@ -18,7 +18,7 @@
                     </div>
 
                     <div class="div-greet">
-                        <span class="welNote" style="font-weight: bold;">Hello, </span><span class="user_name" style="font-weight: bold;"><?php echo $fname; ?></span><span class="span_out"><span class="liner">[</span><a href="../pages/logout.php" ><!--<img src="images/logout.jpg" width="20">-->Log out</a><span class="liner">]</span></span>
+                        <span class="welNote" style="font-weight: bold;">Hello, </span><span class="user_name" style="font-weight: bold;"><?php echo ucwords(strtolower($fname)); ?></span><span class="span_out"><span class="liner">[</span><a href="../pages/logout.php" ><!--<img src="images/logout.jpg" width="20">-->Log out</a><span class="liner">]</span></span>
                     </div>
 
                 </div>

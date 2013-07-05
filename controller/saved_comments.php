@@ -1,12 +1,12 @@
 <?php
 
     session_start();
+    include '../pages/home.php';
+    include '../process/CommentDAO.php';
 
-    include '../process/UserDAO.php';
-
-    $action = new UserDAO();
-    $m_id = $_POST['id'];
-    $user_in_post = $_POST['post'];
+    $action = new CommentDAO();
+    $m_id = $_POST['post_id'];
+    $user_in_post = $_POST['post_contents'];
     $emailadd = $_SESSION['emailadd'];
 
-    $action->user_tweets_rep($m_id, $user_in_post, $emailadd);
+    $action->addNewComments($m_id, $user_in_post, $emailadd);

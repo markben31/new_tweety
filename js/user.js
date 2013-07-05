@@ -562,13 +562,14 @@ function AutoGrowTextArea(id, ctr, textField) {
 
 function submitComments(id, ctr){
     var post = $('.post'+ctr).val();
-    var picture = $('#prof_pic_name').val();
-    var user_name = $('#account_name').val();
+    var picture = $('#user_prof_pic').val();
+    var user_name = $('#username').val();
 
     if(post.length >= 58){
         //    alert("wew!");
 
         $('#user_in_post').css({"wordBreak": "wordBreak", "height":"51px"});
+        alert(post + picture + user_name);
 
     }
 
@@ -576,7 +577,7 @@ function submitComments(id, ctr){
 
     } else {
         $.ajax({
-            url: 'php_func/saved_comments.php',
+            url: '../controller/saved_comments.php',
             type: 'POST',
             data:{"id": id, "post": post},
 
@@ -597,7 +598,7 @@ function submitComments(id, ctr){
                 $('#replyBtn'+id).addClass('disabled');
 
             }, error: function(){
-                alert('Eror');
+                alert('Error in submitting comments!');
             }
         });
         return true;

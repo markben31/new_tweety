@@ -230,8 +230,8 @@
                         <tr class="tr_name">
                             <td align="center" colspan="2">
 
-                                <a href="" disabled="disabled" name="user_name" id="user_name" /><?php echo $fname . ' ' . $lname;?></a><br/>
-                                <a name="username" id="username"><span style='color: rgba(200,200,200,.50); font-size: 12px;'>@</span><?php echo $username; ?></a><br/>
+                                <a href="" disabled="disabled" name="user_name" id="user_name" /><?php echo ucwords(strtolower($fname)) . ' ' . ucwords(strtolower($lname));?></a><br/>
+                                <a name="username" id="username"><span style='color: rgba(200,200,200,.50); font-size: 12px;'>@</span><?php echo strtolower($username); ?></a><br/>
                             </td>
                         </tr>
                         </tbody>
@@ -381,9 +381,11 @@
                                                 echo "<tr class='tr_user_post_com'>";
                                                 echo "<td>";
                                                 echo "<div align='left' class='div_view_tweet_actions' id='' style='margin-left: 30px; margin-left: 30px; margin-top: 10px; background-color: rgba(20,20,20,0.14); padding: 5px; border-top: solid 1px rgba(200,200,200,.15); border-bottom: solid 1px rgba(200,200,200,.15); '>";
-                                                echo "<input type='hidden' value='" . $item['id'] ."' name='user_m_post' id='user_m_post' />";
+                                                echo "<input type='hidden' value='" . $item['id'] ."' name='post_id' id='post' />";
+                                                echo "<input type='hidden' value='" . $username ."' name='username' />";
+                                                echo "<img hidden='hidden' name='user_prof_pic' src='../php_func/" . $profile_pic ."' style='width:30px; height: 30px; ' />";
                                                 echo "<img src='../php_func/" . $profile_pic ."' style='width:30px; height: 30px; ' />";
-                                                echo "<textarea name='user_in_post' onkeyup='AutoGrowTextArea(" . $item['id'] .",". $ctr .", this)' id='user_in_post" . $ctr . "' class='post". $ctr." postka' placeholder='Write a comment..'></textarea> ";
+                                                echo "<textarea name='post_contents' onkeyup='AutoGrowTextArea(" . $item['id'] .",". $ctr .", this)' id='user_in_post" . $ctr . "' class='post". $ctr." postka' placeholder='Write a comment..'></textarea> ";
 
                                                 echo "<button id='replyBtn". $item['id']."' class='hoigana btn btn-primary btn-small disabled' onclick='submitComments(".$item['id'].", ". $ctr.");'><i class='icon-comment icon-white'></i> Reply</button>";
                                                 echo "</div>";

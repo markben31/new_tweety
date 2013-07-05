@@ -46,12 +46,11 @@
 
             $this->open();
             $res = array();
-            $stmt = $this->dbcon->prepare("SELECT a.id, m.id,  p.images, a.firstName, a.lastName, a.username, m.contents, m.emailadd
-                                           FROM accounts AS a, photos AS p, microtweets AS m, following AS f
-                                           WHERE f.to = a.emailaddress
-                                           AND f.to = m.emailadd
-                                           AND f.to = p.email
-                                           AND f.from != ?
+            $stmt = $this->dbcon->prepare("SELECT a.id, m.id, p.images, a.firstName, a.lastName, a.username, m.contents
+                                           FROM photos AS p, microtweets AS m, accounts AS a
+                                           WHERE a.emailaddress = m.emailadd
+                                           AND p.email = a.emailaddress
+                                           AND m.emailadd = ?
                                            ORDER BY m.id DESC;");
             $stmt->bindParam(1, $email);
             $stmt->execute();
@@ -66,7 +65,6 @@
                 $arr['lastName'] = $row[4];
                 $arr['username'] = $row[5];
                 $arr['contents'] = $row[6];
-                $arr['emailadd'] = $row[7];
 
                 $res[$i] = $arr;
                 $i++;
