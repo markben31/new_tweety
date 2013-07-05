@@ -318,80 +318,163 @@
 
                     <div class="div_user_view_tweets">
                         <table id="tbl_view_tweets" style="border-spacing: inherit;" >
-                            <tbody class="tbody_view_tweets"> <!--View all tweets-->
-                            <?php
+                            <!--View all tweets-->
 
-                                //Comments block
-                                $comments = new CommentDAO();
+                            <tbody class="tbody_view_tweets">
+                                <tr>
+                                    <td>
+                                        <?php
 
-                                //Micropost blocks
-                                $post = new MicropostDAO();
-                                $result = $post->viewtweets($email);
-                                $json = json_decode($result, true);
+                                            //Comments block
+                                            $comments = new CommentDAO();
 
-                                $ctr = 1;
-                                foreach($json as $item){
-                                    $disp_comments = $comments->viewComments($item['post_id']);
-                                    $comment_result = json_decode($disp_comments, true);
+                                            //Micropost blocks
+                                            $post = new MicropostDAO();
+                                            $result = $post->viewtweets($email);
+                                            $json = json_decode($result, true);
 
-                                    echo "<table id='tbl_user_post'>";
-                                    echo "<tr class='tr_upper'>";
-                                    echo "<td ><input type='hidden' name='m_id' id='m_id' value='" . $item['post_id'] ."' />";
-                                    echo "<div class='div_view_tweet' align='left' style='padding: 3px;'>";
-                                    echo "<img class='img-polaroid'  src='../php_func/" . $item['images'] ."' style='width: 50px; height:50px;'/>";
-                                    echo "<a href='' style='color:yellowgreen; font-weight: bold; font-size: 15px;'  >" . ucwords(strtolower( $item['firstName'])) . ' ' . ucwords(strtolower( $item['lastName'])) . "</a><a style='text-decoration: none; color: rgba(200,200,200,.50); font-size: 12px; '>" . "<span style='color: rgba(200,200,200,.50); font-size: 12px margin-left: 2px; '>@</span>" .strtolower($item['username']) ."</a> <br/>";
-                                    echo " <div class='comment more' align='left' style='width: 462px; padding: 2px; margin-left: 28px;'>" . nl2br(htmlentities($item['contents'])) ."</div>";
-                                    echo "</div>";
-                                    echo "</td>";
-                                    echo "</tr>";
-                                    echo"</table>";
+                                            $ctr = 1;
+                                            foreach($json as $item){
+                                                $disp_comments = $comments->viewComments($item['post_id']);
+                                                $comment_result = json_decode($disp_comments, true);
 
-                                    echo "<tr>";
-                                    echo "<td>";
-                                    echo "<div style='margin-left: 30px; width: 470px; '>";
-                                    echo "<div style='background-color: rgba(200,200,200,.10); margin-bottom: 0px;padding: 0px 5px; border-top: 1px solid rgba(200,200,200,.15); border-bottom: 1px solid rgba(200,200,200,.15);' align='left'>";
-                                    echo "<a id='com_id' href='#user_in_post'>Comment</a>";
-                                    echo "</div>";
-                                    echo "<table id='view_all_comments". $item['post_id']."' style=' background-color: rgba(200,200,200,.10);'>";
+                                                echo "<table id='tbl_user_post'>";
+                                                echo "<tr class='tr_upper'>";
+                                                echo "<td ><input type='hidden' name='m_id' id='m_id' value='" . $item['post_id'] ."' />";
+                                                echo "<div class='div_view_tweet' align='left' style='padding: 3px;'>";
+                                                echo "<img class='img-polaroid'  src='../php_func/" . $item['images'] ."' style='width: 50px; height:50px;'/>";
+                                                echo "<a href='' style='color:yellowgreen; font-weight: bold; font-size: 15px;'  >" . ucwords(strtolower( $item['firstName'])) . ' ' . ucwords(strtolower( $item['lastName'])) . "</a><a style='text-decoration: none; color: rgba(200,200,200,.50); font-size: 12px; '>" . "<span style='color: rgba(200,200,200,.50); font-size: 12px margin-left: 2px; '>@</span>" .strtolower($item['username']) ."</a> <br/>";
+                                                echo " <div class='comment more' align='left' style='width: 462px; padding: 2px; margin-left: 28px;'>" . nl2br(htmlentities($item['contents'])) ."</div>";
+                                                echo "</div>";
+                                                echo "</td>";
+                                                echo "</tr>";
 
-                                    /*--comment start---*/
+                                                echo "<tr>";
+                                                echo "<td>";
+                                                echo "<div style='margin-left: 30px; width: 470px; '>";
+                                                echo "<div style='background-color: rgba(200,200,200,.10); margin-bottom: 0px;padding: 0px 5px; border-top: 1px solid rgba(200,200,200,.15); border-bottom: 1px solid rgba(200,200,200,.15);' align='left'>";
+                                                echo "<a id='com_id' href='#user_in_post'>Comment</a>";
+                                                echo "</div>";
+                                                echo "<table id='view_all_comments". $item['post_id']."' style=' background-color: rgba(200,200,200,.10);'>";
 
-                                    foreach($comment_result as $comment_items) {
-                                        echo  "<tr >";
-                                        echo  "<td>";
-                                        echo  "<div align='justify' style=' margin-left: 4px; margin-top: 0px; padding-right: 3px; width: 461px; font-size: 80%; height: auto; margin-bottom: 0px; padding-top: 2px; padding-bottom: 3px; border-bottom: solid 1px rgba(100,100,100,.50); ' class='div_view_comments' id='div_all_comments'>";
-                                        echo  "<img src='../php_func/" . $comment_items['images'] ."' style='width:30px; height:30px;'/>";
-                                        echo  "<a style='margin-left: 3px; cursor: pointer; font-size: 90%; color: rgb(200,200,200);'>" . ucwords(strtolower( $comment_items['firstName'])) . ' ' . ucwords(strtolower( $comment_items['lastName'] )) ."</a> :";
-                                        echo  " <span style='margin-left: 3px; color: rgb(100,250,100);' align='left' name='view_txt_content'>" . nl2br(htmlentities($comment_items['comments'])) ."</span>";
-                                        echo  "</div>";
-                                        echo  "</td>";
-                                        echo "</tr>";
-                                    }
+                                                /*--comment start---*/
 
-                                    /*--comment end---*/
+                                                foreach($comment_result as $comment_items) {
+                                                echo "<tr >";
+                                                echo "<td>";
+                                                echo "<div align='justify' style=' margin-left: 4px; margin-top: 0px; padding-right: 3px; width: 461px; font-size: 80%; height: auto; margin-bottom: 0px; padding-top: 2px; padding-bottom: 3px; border-bottom: solid 1px rgba(100,100,100,.50); ' class='div_view_comments' id='div_all_comments'>";
+                                                echo "<img src='../php_func/" . $comment_items['images'] ."' style='width:30px; height:30px;'/>";
+                                                echo "<a style='margin-left: 3px; cursor: pointer; font-size: 90%; color: rgb(200,200,200);'>" . ucwords(strtolower( $comment_items['firstName'])) . ' ' . ucwords(strtolower( $comment_items['lastName'] )) ."</a> :";
+                                                echo " <span style='margin-left: 3px; color: rgb(100,250,100);' align='left' name='view_txt_content'>" . nl2br(htmlentities($comment_items['comments'])) ."</span>";
+                                                echo "</div>";
+                                                echo "</td>";
+                                                echo "</tr>";
+                                                }
 
-                                    echo "</table>";
-                                    echo "</div>";
-                                    echo "</td>";
-                                    echo "</tr>";
-                                    echo "<tr class='tr_user_post_com'>";
-                                    echo "<td>";
-                                    echo "<div align='left' class='div_view_tweet_actions' id='' style='margin-left: 30px; margin-left: 30px; margin-top: 10px; background-color: rgba(20,20,20,0.14); padding: 5px; border-top: solid 1px rgba(200,200,200,.15); border-bottom: solid 1px rgba(200,200,200,.15); '>";
-                                    echo "<input type='hidden' value='" . $item['id'] ."' name='user_m_post' id='user_m_post' />";
-                                    echo "<img src='../php_func/" . $profile_pic ."' style='width:30px; height: 30px; ' />";
-                                    echo "<textarea name='user_in_post' onkeyup='AutoGrowTextArea(" . $item['id'] .",". $ctr .", this)' id='user_in_post" . $ctr . "' class='post". $ctr." postka' placeholder='Write a comment..'></textarea> ";
+                                                /*--comment end---*/
 
-                                    echo "<button id='replyBtn". $item['id']."' class='hoigana btn btn-primary btn-small disabled' onclick='submitComments(".$item['id'].", ". $ctr.");'><i class='icon-comment icon-white'></i> Reply</button>";
-                                    echo "</div><div class='div_liner' style='width: 95%; margin-top: 10px; border-bottom: solid 1px black;' ></div>";
-                                    echo "</td>";
-                                    echo "</tr>";
+                                                echo "</table>";
+                                                echo "</div>";
+                                                echo "</td>";
+                                                echo "</tr>";
 
-                                    $ctr++;
-                                }
-                            ?>
+                                                echo "<tr class='tr_user_post_com'>";
+                                                echo "<td>";
+                                                echo "<div align='left' class='div_view_tweet_actions' id='' style='margin-left: 30px; margin-left: 30px; margin-top: 10px; background-color: rgba(20,20,20,0.14); padding: 5px; border-top: solid 1px rgba(200,200,200,.15); border-bottom: solid 1px rgba(200,200,200,.15); '>";
+                                                echo "<input type='hidden' value='" . $item['id'] ."' name='user_m_post' id='user_m_post' />";
+                                                echo "<img src='../php_func/" . $profile_pic ."' style='width:30px; height: 30px; ' />";
+                                                echo "<textarea name='user_in_post' onkeyup='AutoGrowTextArea(" . $item['id'] .",". $ctr .", this)' id='user_in_post" . $ctr . "' class='post". $ctr." postka' placeholder='Write a comment..'></textarea> ";
+
+                                                echo "<button id='replyBtn". $item['id']."' class='hoigana btn btn-primary btn-small disabled' onclick='submitComments(".$item['id'].", ". $ctr.");'><i class='icon-comment icon-white'></i> Reply</button>";
+                                                echo "</div>";
+                                                echo "</td>";
+                                                echo "</tr>";
+                                                echo"</table>";
+
+                                                $ctr++;
+                                                }
+                                                ?>
+                                    </td>
+                                </tr>
                             </tbody>
 
-                            <tbody style="display: none;" class="tbody_view_my_tweets"> <!--View my tweets-->
+                            <!--View my tweets-->
+                            <tbody hidden="hidden" class="tbody_view_my_tweets">
+                                <tr>
+                                    <td>
+                                        <?php
+
+                                        //Comments block
+                                        $comments = new CommentDAO();
+
+                                        //Micropost blocks
+                                        $post = new MicropostDAO();
+                                        $result = $post->viewmytweets($email);
+                                        $json = json_decode($result, true);
+
+                                        $ctr = 1;
+                                        foreach($json as $item){
+                                            $disp_comments = $comments->viewmyComments($item['post_id']);
+                                            $comment_result = json_decode($disp_comments, true);
+
+                                            echo "<table id='tbl_user_post'>";
+                                            echo "<tr class='tr_upper'>";
+                                            echo "<td ><input type='hidden' name='m_id' id='m_id' value='" . $item['post_id'] ."' />";
+                                            echo "<div class='div_view_tweet' align='left' style='padding: 3px;'>";
+                                            echo "<img class='img-polaroid'  src='../php_func/" . $item['images'] ."' style='width: 50px; height:50px;'/>";
+                                            echo "<a href='' style='color:yellowgreen; font-weight: bold; font-size: 15px;'  >" . ucwords(strtolower( $item['firstName'])) . ' ' . ucwords(strtolower( $item['lastName'])) . "</a><a style='text-decoration: none; color: rgba(200,200,200,.50); font-size: 12px; '>" . "<span style='color: rgba(200,200,200,.50); font-size: 12px margin-left: 2px; '>@</span>" .strtolower($item['username']) ."</a> <br/>";
+                                            echo " <div class='comment more' align='left' style='width: 462px; padding: 2px; margin-left: 28px;'>" . nl2br(htmlentities($item['contents'])) ."</div>";
+                                            echo "</div>";
+                                            echo "</td>";
+                                            echo "</tr>";
+
+                                            echo "<tr>";
+                                            echo "<td>";
+                                            echo "<div style='margin-left: 30px; width: 470px; '>";
+                                            echo "<div style='background-color: rgba(200,200,200,.10); margin-bottom: 0px;padding: 0px 5px; border-top: 1px solid rgba(200,200,200,.15); border-bottom: 1px solid rgba(200,200,200,.15);' align='left'>";
+                                            echo "<a id='com_id' href='#user_in_post'>Comment</a>";
+                                            echo "</div>";
+                                            echo "<table id='view_all_comments". $item['post_id']."' style=' background-color: rgba(200,200,200,.10);'>";
+
+                                            /*--comment start---*/
+
+                                            foreach($comment_result as $comment_items) {
+                                            echo "<tr >";
+                                            echo "<td>";
+                                            echo "<div align='justify' style=' margin-left: 4px; margin-top: 0px; padding-right: 3px; width: 461px; font-size: 80%; height: auto; margin-bottom: 0px; padding-top: 2px; padding-bottom: 3px; border-bottom: solid 1px rgba(100,100,100,.50); ' class='div_view_comments' id='div_all_comments'>";
+                                            echo "<img src='../php_func/" . $comment_items['images'] ."' style='width:30px; height:30px;'/>";
+                                            echo "<a style='margin-left: 3px; cursor: pointer; font-size: 90%; color: rgb(200,200,200);'>" . ucwords(strtolower( $comment_items['firstName'])) . ' ' . ucwords(strtolower( $comment_items['lastName'] )) ."</a> :";
+                                            echo " <span style='margin-left: 3px; color: rgb(100,250,100);' align='left' name='view_txt_content'>" . nl2br(htmlentities($comment_items['comments'])) ."</span>";
+                                            echo "</div>";
+                                            echo "</td>";
+                                            echo "</tr>";
+                                            }
+
+                                            /*--comment end---*/
+
+                                            echo "</table>";
+                                            echo "</div>";
+                                            echo "</td>";
+                                            echo "</tr>";
+
+                                            echo "<tr class='tr_user_post_com'>";
+                                            echo "<td>";
+                                            echo "<div align='left' class='div_view_tweet_actions' id='' style='margin-left: 30px; margin-left: 30px; margin-top: 10px; background-color: rgba(20,20,20,0.14); padding: 5px; border-top: solid 1px rgba(200,200,200,.15); border-bottom: solid 1px rgba(200,200,200,.15); '>";
+                                            echo "<input type='hidden' value='" . $item['id'] ."' name='user_m_post' id='user_m_post' />";
+                                            echo "<img src='../php_func/" . $profile_pic ."' style='width:30px; height: 30px; ' />";
+                                            echo "<textarea name='user_in_post' onkeyup='AutoGrowTextArea(" . $item['id'] .",". $ctr .", this)' id='user_in_post" . $ctr . "' class='post". $ctr." postka' placeholder='Write a comment..'></textarea> ";
+
+                                            echo "<button id='replyBtn". $item['id']."' class='hoigana btn btn-primary btn-small disabled' onclick='submitComments(".$item['id'].", ". $ctr.");'><i class='icon-comment icon-white'></i> Reply</button>";
+                                            echo "</div>";
+                                            echo "</td>";
+                                            echo "</tr>";
+                                            echo"</table>";
+
+                                            $ctr++;
+                                            }
+                                            ?>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>

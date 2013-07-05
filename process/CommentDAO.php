@@ -81,6 +81,40 @@
 
         }
 
+        //View my comments
+        function viewmyComments($id){
+            $this->open();
+
+            $res = array();
+            $stmt = $this->dbcon->prepare("SELECT p.images, a.firstName, a.lastName, op.post_contents
+                                           FROM comments AS op, photos AS p, microtweets AS m, accounts AS a
+                                           WHERE m.id = op.id
+                                           AND p.email = a.emailaddress
+                                           AND op.email = p.email
+                                           AND op.id = ?
+                                           AND op.status = 0
+                                           ORDER BY op.p_id ASC;");
+            $stmt->bindParam(1, $id);
+            $stmt->execute();
+
+            $i = 0;
+            while($row = $stmt->fetch()) {
+                $arr = array();
+                $arr['images'] = $row[0];
+                $arr['firstName'] = $row[1];
+                $arr['lastName'] = $row[2];
+                $arr['comments'] = $row[3];
+
+                $res[$i] = $arr;
+                $i++;
+            }
+
+            return json_encode($res);
+
+            $this->close();
+
+        }
+
         //View all comments
         function getNewComments(){
             $this->open();

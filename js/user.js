@@ -299,6 +299,9 @@ $(document).ready(function(){
         // alert("wew!");
         $('#my_tweetsBtn').hide();
         $('#other_tweetsBtn').fadeIn(1);
+
+        $('.tbody_view_tweets').fadeOut(1);
+        $('.tbody_view_my_tweets').fadeIn(1);
     });
 
     $('#other_tweetsBtn').click(function(){
@@ -323,26 +326,6 @@ $(document).ready(function(){
             }
         });*/
 
-    });
-
-
-    $('#my_tweetsBtn').click(function(){
-
-        $('.tbody_view_tweets').fadeOut(1);
-
-        //Viewing my tweets
-        $.ajax({
-            type:"POST",
-            url: "php_func/viewmytweets.php",
-            success: function(data){
-                //   alert(data);
-                $(".tbody_view_my_tweets").fadeIn(1);
-                $(".tbody_view_my_tweets").html(data);
-            },
-            error: function(data){
-                alert("Viewing user tweets" + data);
-            }
-        });
     });
 
     //count user following
