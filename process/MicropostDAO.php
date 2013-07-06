@@ -75,5 +75,19 @@
             $this->close();
 
         }
+
+        //user add tweets
+        function addtweets($contents, $emailadd){
+
+            $this->open();
+
+            $stmt = $this->dbcon->prepare("INSERT INTO microtweets VALUES(null,?,?);");
+            $stmt->bindParam(1, $contents);
+            $stmt->bindParam(2, $emailadd);
+            $stmt->execute();
+
+            $this->close();
+
+        }
     }
 ?>

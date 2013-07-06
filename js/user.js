@@ -295,13 +295,10 @@ $(document).ready(function(){
         }
     });*/
 
-    $('#my_tweetsBtn').click(function(){
-        // alert("wew!");
-        $('#my_tweetsBtn').hide();
-        $('#other_tweetsBtn').fadeIn(1);
 
-        $('.tbody_view_tweets').fadeOut(1);
-        $('.tbody_view_my_tweets').fadeIn(1);
+
+    $('#my_tweetsBtn').click(function(){
+        mytweets();
     });
 
     $('#other_tweetsBtn').click(function(){
@@ -482,12 +479,20 @@ $(document).ready(function(){
 
 });
 
+function mytweets(){
+    $('#my_tweetsBtn').hide();
+    $('#other_tweetsBtn').fadeIn(1);
+
+    $('.tbody_view_tweets').fadeOut(1);
+    $('.tbody_view_my_tweets').fadeIn(1);
+}
+
 
 function checkSpaceinTxtarea() {
 
-    var post = $('#txt_content').val();
+    var mypost = $('#txt_content').val();
 
-    if(post == "" || post.match(/^\s*$/)){
+    if(mypost == "" || mypost.match(/^\s*$/)){
         $('#tweetBtn').addClass('disabled');
         return false;
     } else {
@@ -498,37 +503,58 @@ function checkSpaceinTxtarea() {
 }
 
 function submitPost(){
-    var post = $('#txt_content').val();
+    var mypost = $('#txt_content').val();
     var picture = $('#user_pics').val();
-    var username = $('#username').val();
+    var username = $('#user_username').val();
     var name = $('#name').val();
 
-    if(post == "" || post.match(/^\s*$/)){
+    if(mypost == "" || mypost.match(/^\s*$/)){
     } else {
         $.ajax({
-            url: 'php_func/add_tweets.php',
+            url: '../controller/add_tweets.php',
             type: 'POST',
-            data:{"txt_content": post},
+            data:{"txt_content": mypost},
 
             success: function(){
                 var post = "";
-                post += "<tr id='' class='tr_upper'>";
-                post += "<td>";
+                post += "<thead><tr class='tr_upper'>";
+                post += "<td ><input type='hidden' name='m_id' id='m_id' value='' />";
                 post += "<div class='div_view_tweet' align='left' style='padding: 3px;'>";
-                post += "<img src='php_func/" + picture +"' style='width: 50px; height:50px;'/>";
-                post += "<a href='' style='color:yellowgreen; font-weight: bold; font-size: 15px;'  >" + name + "</a><a href='' style='color: rgba(200,200,200,.50); font-size: 12px; '>" + "<span style='color: rgba(200,200,200,.50); font-size: 12px; margin-left: 2px; '>@</span>" + username + "</a> <br/>";
-                post += " <div class='' align='justify' style='width: 462px; padding: 2px;margin-left: 28px;'>" + post + "</div>";
+                post += "<img class='img-polaroid'  src='../php_func/"+picture+"' style='width: 50px; height:50px;'/>";
+                post += "<a href='' style='color:yellowgreen; font-weight: bold; font-size: 15px;'  >"+ name +"</a><a style='text-decoration: none; color: rgba(200,200,200,.50); font-size: 12px; '><span style='color: rgba(200,200,200,.50); font-size: 12px; margin-left: 2px; '>@</span>" + username +  "</a> <br/>";
+                post += " <div class='comment more' align='left' style='width: 462px; padding: 2px; margin-left: 28px;'>" + mypost + "</div>";
                 post += "</div>";
                 post += "</td>";
                 post += "</tr>";
 
-                $('#tbl_user_post').append(post);
+                post += "<tr>";
+                post += "<td>";
+                post += "<div style='margin-left: 30px; width: 470px; '>";
+                post += "<div style='background-color: rgba(200,200,200,.10); margin-bottom: 0px;padding: 0px 5px; border-top: 1px solid rgba(200,200,200,.15); border-bottom: 1px solid rgba(200,200,200,.15);' align='left'>";
+                post += "<a id='com_id' href='#user_in_post'>Comment</a>";
+                post += "</div>";
+                post += "</div>";
+                post += "</td>";
+                post += "</tr>";
+
+                post += "<tr class='tr_user_post_com'>";
+                post += "<td>";
+                post += "<div align='left' class='div_view_tweet_actions' id='' style='margin-left: 30px; margin-left: 30px; margin-top: 10px; background-color: rgba(20,20,20,0.14); padding: 5px; border-top: solid 1px rgba(200,200,200,.15); border-bottom: solid 1px rgba(200,200,200,.15); '>";
+                post += "<input type='hidden' value='' name='user_m_post' id='user_m_post' />";
+                post += "<img src='../php_func/"+picture+"' style='width:30px; height: 30px; ' />";
+                post += "<textarea name='post_contents' id='user_in_post' class='post postka' placeholder='Write a comment..'></textarea> ";
+
+                post += "<button id='replyBtn' class='hoigana btn btn-primary btn-small disabled' ><i class='icon-comment icon-white'></i> Reply</button>";
+                post += "</td>";
+                post += "</tr></thead>";
+
+                $('#my_post_view').append(post);
                 $('#txt_content').val("").css({"height":"20px"});
                 $('.txt_footer').css({"display":"none"});
                 $('#tweetBtn').addClass('disabled');
 
             }, error: function(){
-                alert('Eror');
+                alert('Error in submitting tweets!');
             }
         });
         return true;

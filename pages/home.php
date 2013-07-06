@@ -294,8 +294,6 @@
                                 <tr>
                                     <td>
                                         <div class="div_user_txt">
-                                            <input type="hidden" id="username" value="<?php echo $u_name; ?>" />
-                                            <input type="hidden" name="name" id="name" value="<?php echo $name; ?>"/>
                                             <textarea cols="1" rows="1" draggable="false" id="txt_content" name="txt_content" onkeyup="checkSpaceinTxtarea();" placeholder="Write something..." spellcheck="true" ></textarea>
 
                                             <div class="txt_footer" align="right">
@@ -310,7 +308,7 @@
                     </div>
 
                     <div class="div_liner" style="width: 95%;" align="right" >
-                        <button style="display: none;" class="btn btn-primary btn-small" id="other_tweetsBtn" ><i class="icon-list-alt icon-white"></i> All Tweets</button>
+                        <button style="display: none;" class="btn btn-danger btn-small" id="other_tweetsBtn" ><i class="icon-list-alt icon-white"></i> Back</button>
                         <button class="btn btn-primary btn-small" id="my_tweetsBtn" ><i class="icon-list-alt icon-white"></i> My Tweets</button>
                     </div>
 
@@ -341,6 +339,9 @@
                                                 echo "<table id='tbl_user_post'>";
                                                 echo "<tr class='tr_upper'>";
                                                 echo "<td ><input type='hidden' name='m_id' id='m_id' value='" . $item['post_id'] ."' />";
+                                                echo "<input type='hidden' id='user_username' value='" . strtolower($username) ."' />";
+                                                echo "<input type='hidden' name='name' id='name' value='" . ucwords(strtolower($fname)) . ' ' . ucwords(strtolower($lname)) . "'/>";
+                                                echo "<input hidden='hidden' style='width: 30px ; height: 30px ;' id='user_pics' value='" . $profile_pic ."' />";
                                                 echo "<div class='div_view_tweet' align='left' style='padding: 3px;'>";
                                                 echo "<img class='img-polaroid'  src='../php_func/" . $item['images'] ."' style='width: 50px; height:50px;'/>";
                                                 echo "<a href='' style='color:yellowgreen; font-weight: bold; font-size: 15px;'  >" . ucwords(strtolower( $item['firstName'])) . ' ' . ucwords(strtolower( $item['lastName'])) . "</a><a style='text-decoration: none; color: rgba(200,200,200,.50); font-size: 12px; '>" . "<span style='color: rgba(200,200,200,.50); font-size: 12px margin-left: 2px; '>@</span>" .strtolower($item['username']) ."</a> <br/>";
@@ -419,7 +420,7 @@
                                             $disp_comments = $comments->viewmyComments($item['post_id']);
                                             $comment_result = json_decode($disp_comments, true);
 
-                                            echo "<table id='tbl_user_post'>";
+                                            echo "<table id='tbl_my_post'>";
                                             echo "<tr class='tr_upper'>";
                                             echo "<td ><input type='hidden' name='m_id' id='m_id' value='" . $item['post_id'] ."' />";
                                             echo "<div class='div_view_tweet' align='left' style='padding: 3px;'>";
